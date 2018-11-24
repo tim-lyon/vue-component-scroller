@@ -1,5 +1,5 @@
 <template>
-  <div class="scroller" @scroll="onScroll" tabindex="1">
+  <div :style="{overflowY: 'scroll', outline: 'none'}" @scroll="onScroll" tabindex="1">
     <div :style="{marginTop:topMargin+'px',marginBottom:bottomMargin+'px',}">	
       <component v-for="itemIndex in visibleItems"
 		:style="{height:itemHeight+'px',overflow: 'hidden'}"
@@ -75,12 +75,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.scroller{
-  overflow-y:scroll;
-  outline: none;
-  margin:0;
-  padding:0;
-}
-</style>

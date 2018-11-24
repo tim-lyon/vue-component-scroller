@@ -1,7 +1,14 @@
 {
   "name": "vue-component-scroller",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
+  "main": "./dist/vue-component-scroller.common.js",
+  "files": [
+    "dist/*",
+    "src/*",
+    "*.json",
+    "*.js"
+  ],
   "scripts": {
     "build": "vue-cli-service build --target lib --name vue-component-scroller src/Component.vue",
     "lint": "vue-cli-service lint"
