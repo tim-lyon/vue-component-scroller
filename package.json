@@ -3,8 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target lib --name myLib",
+    "build": "vue-cli-service build --target lib --name myLib src/Component.vue",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
