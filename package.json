@@ -1,9 +1,9 @@
 {
   "name": "vue-component-scroller",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
-    "build": "vue-cli-service build --target lib --name myLib src/Component.vue",
+    "build": "vue-cli-service build --target lib --name vue-component-scroller src/Component.vue",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
