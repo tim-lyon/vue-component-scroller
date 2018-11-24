@@ -1,5 +1,5 @@
 # vue-component-scroller
-A virtual scroller for rendering (very) long lists vue components.
+A virtual scroller for rendering (very) long lists of vue components.
 
 ## Live demo
 <https://tim-lyon.github.io/vue-component-scroller/>
