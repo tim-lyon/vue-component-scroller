@@ -33,20 +33,12 @@ export default {
 		}
   },
   mounted(){
-	this.startItem = -this.bufferSize
-	const containerHeight = this.$el.clientHeight
-	this.visibleItemCount = Math.floor((containerHeight-2*this.itemHeight)/this.itemHeight)+2*this.bufferSize
-	const visibleHeight = this.itemHeight*this.visibleItemCount
-	const realTotalHeight = this.itemHeight*this.itemCount
-	const totalHeight = Math.min(realTotalHeight,10e6)
-	this.totalMargin = totalHeight - visibleHeight
-	this.marginFactor = (realTotalHeight-visibleHeight)/(this.totalMargin)
-	this.maxScrollTop = Math.max(0, totalHeight - containerHeight)
-	this.maxStartItem = Math.max(0, this.itemCount - this.visibleItemCount)
-	this.topMargin = 0
-	this.bottomMargin = this.totalMargin
+	this.initialise()
   },
   watch: {
+	itemCount(){
+	  this.initialise()
+	},
 	startItem(){
 		this.topMargin = Math.max(0,Math.floor(this.itemHeight*this.startItem/this.marginFactor))
 		this.bottomMargin = this.totalMargin - this.topMargin
@@ -69,6 +61,20 @@ export default {
 	}
   },
   methods: {
+    initialise(){
+	  this.startItem = -this.bufferSize
+	  const containerHeight = this.$el.clientHeight
+	  this.visibleItemCount = Math.floor((containerHeight-2*this.itemHeight)/this.itemHeight)+2*this.bufferSize
+	  const visibleHeight = this.itemHeight*this.visibleItemCount
+	  const realTotalHeight = this.itemHeight*this.itemCount
+	  const totalHeight = Math.min(realTotalHeight,10e6)
+	  this.totalMargin = totalHeight - visibleHeight
+	  this.marginFactor = (realTotalHeight-visibleHeight)/(this.totalMargin)
+	  this.maxScrollTop = Math.max(0, totalHeight - containerHeight)
+	  this.maxStartItem = Math.max(0, this.itemCount - this.visibleItemCount)
+	  this.topMargin = 0
+	  this.bottomMargin = this.totalMargin
+	},
 	onScroll(){
 		this.scrollTop = this.$el.scrollTop
 	}
