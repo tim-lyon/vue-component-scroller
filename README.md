@@ -12,9 +12,9 @@ The package exports a vue component which takes three props:
  - `itemCount` is the number of components you want in the list
  - `itemHeight` is the fixed height (in pixles) that the components will be rendered at.
  
->Unfortunately, a fixed height for the `item` component is necessary - to pre-calculate the total height of millions of of unique components would take too long.
+>Unfortunately, a fixed height for the `item` component is necessary - to pre-calculate the total height of millions of unique components would take too long.
 
-The `item` component is passed a prop `index` for every instance in the list, allowing it to fetch data or render content based on its position in the list. This makes is particularly useful for rending long lists of repetitive data: table rows, contacts, photos etc *without* having to fetch all the data in advance.
+The `item` component is passed a prop `index` for every instance in the list, allowing it to fetch data or render content based on its position in the list. This makes is particularly useful for rending long lists of repetitive data: table rows, contacts, photos etc *without* having to fetch any of the data in advance.
 
 In the code below, the `ComponentScroller` will render a (high performance) scrolling list of 100,000 instances of  `MyComponent`.
 
@@ -23,9 +23,9 @@ In the code below, the `ComponentScroller` will render a (high performance) scro
   <div id="app">
     <component-scroller
       :item="MyComponent"
-	  itemCount="100000"
-	  itemHeight="60"
-	  style="height:400px;"/>
+      itemCount="100000"
+      itemHeight="60"
+      style="height:400px;"/>
   </div>
 </template>
 
